@@ -12,8 +12,23 @@
     "separator": " -> "
   },
   "modules": [
-    "title",
-    "separator",
+    {
+      "type": "custom",
+      "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+    },
+    {
+      "type": "title",
+      "key": "",
+      "keyWidth": 10
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+    },
     {
       "type": "os",
       "key": " OS",
@@ -22,15 +37,15 @@
     },
     {
       "type": "os",
-      "key": "├", // Just get your distro's logo off nerdfonts.com
+      "key": "├", // Just get your distro's logo off nerdfonts.com
       "keyColor": "yellow",
       "format": "{6}{?6} {?}{10} {8}"
     },
-    {
-      "type": "kernel",
-      "key": "├",
-      "keyColor": "yellow"
-    },
+//  {
+//    "type": "kernel",
+//    "key": "├",
+//    "keyColor": "yellow"
+//  },
     {
       "type": "packages",
       "key": "├󰏖",
@@ -41,8 +56,6 @@
       "key": "└",
       "keyColor": "yellow"
     },
-    "break",
-
     {
       "type": "wm",
       "key": " DE/WM",
@@ -69,12 +82,15 @@
       "keyColor": "blue"
     },
     {
+        "type": "terminalfont",
+        "key": "├─",
+        "keyColor": "yellow"
+    },
+    {
       "type": "wallpaper",
       "key": "└󰸉",
       "keyColor": "blue"
     },
-
-    "break",
     {
       "type": "host",
       "key": "󰌢 PC",
@@ -100,11 +116,11 @@
       "key": "├󰑭",
       "keyColor": "green"
     },
-    {
-      "type": "swap",
-      "key": "├󰓡",
-      "keyColor": "green"
-    },
+//  {
+//    "type": "swap",
+//    "key": "├󰓡",
+//    "keyColor": "green"
+//  },
     {
       "type": "uptime",
       "key": "├󰅐",
@@ -115,8 +131,6 @@
       "key": "└󰍹",
       "keyColor": "green"
     },
-
-    "break",
     {
       "type": "sound",
       "key": " SOUND",
@@ -124,16 +138,22 @@
     },
     {
       "type": "player",
-      "key": "├󰥠",
+      "key": "│ ├󰥠",
       "keyColor": "cyan"
     },
     {
       "type": "media",
-      "key": "└󰝚",
+      "key": "│ └󰝚",
       "keyColor": "cyan"
     },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
+    },
+    {
+      "type": "custom",
+      "format": " \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m       \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
+    }
 
-    "break",
-    "colors"
   ]
 }

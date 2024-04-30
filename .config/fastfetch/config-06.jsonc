@@ -74,8 +74,6 @@
         "key": "╰─",
         "keyColor": "green"
     },
-    "break",
-
     {
         "type": "shell",
         "key": "╭─",
@@ -92,21 +90,6 @@
         "keyColor": "yellow"
     },
     {
-        "type": "lm",
-        "key": "├─󰧨",
-        "keyColor": "yellow"
-    },
-    {
-        "type": "de",
-        "key": "├─",
-        "keyColor": "yellow"
-    },
-    {
-        "type": "wm",
-        "key": "├─",
-        "keyColor": "yellow"
-    },
-    {
         "type": "theme",
         "key": "├─󰉼",
         "keyColor": "yellow"
@@ -118,11 +101,24 @@
     },
     {
         "type": "wallpaper",
-        "key": "╰─󰸉",
+        "key": "├─󰸉",
         "keyColor": "yellow"
     },
-
-    "break",
+    {
+        "type": "lm",
+        "key": "├─󰧨",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "de",
+        "key": "├─",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "wm",
+        "key": "╰─",
+        "keyColor": "yellow"
+    },
     {
         "type": "title",
         "key": "╭─",
@@ -168,7 +164,7 @@
     },
     {
         "type": "wifi",
-        "key": "├─",
+        "key": "╰─",
         "format": "{4}", // ssid
         "keyColor": "blue"
     }
