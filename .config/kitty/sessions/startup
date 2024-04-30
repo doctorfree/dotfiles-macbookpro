@@ -1,0 +1,39 @@
+# Kitty tabbed startup session
+#
+# Kitty tab with Neofetch
+#launch --env SHELL="/bin/zsh" --hold zsh -c "/opt/homebrew/bin/neofetch --kitty auto --source /Users/ronald.record/.local/share/icons/hicolor/512x512/apps/apple-logo.png"
+#launch --env SHELL="/bin/zsh" --hold zsh -c ~/bin/nfetch
+#launch --hold zsh -c /Users/ronald.record/bin/nfetch
+new_tab
+launch --hold zsh -c /Users/ronald.record/bin/nf.sh
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for zsh
+new_tab
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for zsh
+new_tab
+cd ~/src/Kitty/kitty-control
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for Btop++
+new_tab Btop
+launch zsh -c /opt/homebrew/bin/btop
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for Cheat Sheets
+# launch --env PAGER="less -r" zsh -c /Users/ronald.record/bin/rst.sh
+# cd ~/Documents/cheat-sheets-plus/macos
+# launch zsh -c /Users/ronald.record/bin/rst.sh
+new_tab Ranger
+cd ~/Documents/cheat-sheets-plus
+launch zsh -c /opt/homebrew/bin/ranger
+enabled_layouts tall:bias=50;full_size=1
+layout tall

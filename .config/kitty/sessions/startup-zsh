@@ -1,0 +1,27 @@
+# Asciiville Kitty tabbed startup session
+#
+new_tab
+launch --hold neofetch --off
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for SSH sessions
+new_tab
+cd ~/src
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab with Zsh shell in Asciiville source directory
+new_tab
+cd ~/src/Asciiville
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall 
+
+# Kitty tab with Zsh shell in MusicPlayerPlus source directory
+new_tab
+cd ~/src/MusicPlayerPlus
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall 

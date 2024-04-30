@@ -1,0 +1,26 @@
+# Kitty tabbed startup session
+#
+# Kitty tab with Neofetch
+new_tab
+launch --env SHELL="/bin/zsh" --hold zsh -c "neofetch --kitty auto --source ~/.local/share/icons/hicolor/256x256/apps/MacbookPro.png"
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for zsh
+new_tab
+launch zsh
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for Btop++
+new_tab Btop
+launch zsh -c btop
+enabled_layouts tall:bias=50;full_size=1
+layout tall
+
+# Kitty tab for Cheat Sheets
+new_tab Help
+cd ~/Documents/cheat-sheets-plus/macos
+launch --env PAGER="less -r" ranger --selectfile=macos.md
+enabled_layouts tall:bias=50;full_size=1
+layout tall

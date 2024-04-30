@@ -1,0 +1,6 @@
+# Kitty tab for Ranger
+new_tab Ranger
+cd ~/Documents/cheat-sheets-plus/macos
+launch --env PAGER="less -r" ranger --selectfile=macos.md
+enabled_layouts tall:bias=50;full_size=1
+layout tall
