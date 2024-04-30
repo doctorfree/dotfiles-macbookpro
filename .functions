@@ -1,0 +1,45 @@
+# Functions
+#
+# Example functions for remote and recursive remote copying.
+# This assumes you have setup your SSH keys appropriately.
+# Replace "user" with the username you wish to use and "IP" with the IP address
+# function ubucp() { scp "$@" user@IP:/path/to/user/tmp;}
+# function ubuget() { scp user@IP:/path/to/user/"$@" "$@";}
+# function ubugetr() { scp -r user@IP:/path/to/user/"$@" "$@";}
+# function ubucpr() { scp -r "$@" user@IP:/path/to/user/tmp/"$@";}
+#
+# Send a message via the Messages app
+#function msg() {
+#    osascript -e "tell application \"Messages\" to send \"$1\" to buddy \"$2\""
+#}
+
+# Manually start and stop the Leap Motion daemon and agent
+#function start-leap() {
+#    RUNNING=`ps -ef | grep "Leap Motion" | grep leapd`
+#    [ "$RUNNING" ] || {
+#        /Applications/Leap\ Motion.app/Contents/MacOS/leapd > /dev/null 2>&1 &
+#        sleep 1
+#    }
+#    RUNNING=`ps -ef | grep "Leap Motion" | grep -v leapd | grep -v grep`
+#    [ "$RUNNING" ] || {
+#        open /Applications/Leap\ Motion.app
+#    }
+#}
+#function stop-leap() {
+#    RUNNING=`ps -ef | grep "Leap Motion" | grep leapd`
+#    [ "$RUNNING" ] && killall leapd
+#    RUNNING=`ps -ef | grep "Leap Motion" | grep -v leapd | grep -v grep`
+#    [ "$RUNNING" ] && killall Leap\ Motion
+#}
+
+function dmv() {
+    __fname="$(ls -t ~/Downloads | head -n 1)"
+    __fpath="$HOME/Downloads/"$__fname""
+    mv "$__fpath" \.
+}
+function dcp() {
+    __fname="$(ls -t ~/Downloads | head -n 1)"
+    __fpath="$HOME/Downloads/"$__fname""
+    cp -a "$__fpath" \.
+}
+

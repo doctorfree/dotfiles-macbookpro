@@ -1,0 +1,83 @@
+#
+## @file aliases
+## @brief Bash/Zsh .aliases file with convenience command aliases
+## @author Ronald Joe Record (rr at ronrecord dot com)
+## @copyright Copyright (c) 2012, Ronald Joe Record, all rights reserved.
+## @date Written 17-Sep-2012
+## @version 1.0.1
+##
+alias c='clear'
+alias m='models'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lss='ls'
+alias ldown='ls -1tr ~/Downloads'
+alias df='df -h'
+alias du='du -h'
+alias dutop='du -h -d 0'
+alias kc='kitty-control'
+alias neo='nfetch | lolcat'
+alias nf='nfetch'
+alias whence='type -a'
+alias ips='cat /Volumes/Seagate_8TB/Documents/VMware_Doc/Static_IPs'
+# Convenience alias to log an entry to my Day One journal
+alias log="~/Scripts/logtodayone.rb"
+# EthOS working directories
+alias cdeth='cd "/Users/doctorwhen/Mining/ethos/home_ethos"'
+# Project/Vendor working directories
+alias cdaud='cd "/Volumes/Seagate_8TB/Documents/My Documents/Audio"'
+alias powercli='cd /Volumes/Seagate_8TB/Documents/VMware_Doc/PowerCLI'
+
+alias cdfinance='cd "/Volumes/Seagate_8TB/Documents/My Documents/Finance"'
+alias mbsa='cd "/u/audio"'
+alias mbsm='cd "/Volumes/Seagate_8TB/Movies/Work"'
+alias mbsp='cd "/Volumes/Seagate_8TB/Pictures/Work"'
+alias seagate='cd /Volumes/Seagate_8TB'
+alias elite='cd "/Volumes/Seagate_8TB/Pictures/Work/Elite_Babes"'
+alias jp='cd "/Volumes/Seagate_8TB/Pictures/Work/JP_Erotica"'
+alias mbsk='cd "/Volumes/Seagate_8TB/Pictures/Work/KindGirls"'
+alias whvn='cd "/Volumes/Seagate_8TB/Pictures/Work/Wallhaven"'
+alias xart='cd "/Volumes/Seagate_8TB/Pictures/Work/X-Art"'
+alias fractals='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net/fractals"'
+alias skunkware='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net/skunkware"'
+alias ddns='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net"'
+alias itunes='cd /Users/doctorwhen/Music/iTunes'
+alias rpi='cd /Volumes/Seagate_8TB/Raspberry_Pi'
+alias transcend='cd /Volumes/Transcend'
+alias viloan='vi "/Volumes/Seagate_8TB/Documents/My Documents/Finance/Marlene-Juice-Loan.txt"'
+alias vimarcela='vi "/Volumes/Seagate_8TB/Documents/Home/Marcela-Hours.txt"'
+# To use Vim
+command -v vim > /dev/null && alias vi='vim'
+# To use NeoVim
+command -v nvim > /dev/null && alias vi='nvim'
+# Web hosting directories
+alias ronrecord='cd "/Volumes/Seagate_8TB/Documents/My Documents/ronrecord.com/httpdocs"'
+alias themes='cd "/Volumes/Seagate_8TB/Documents/My Documents/ronrecord.com/httpdocs/Themes/Chrome"'
+alias plugins='cd "/Volumes/Seagate_8TB/Documents/My Documents/ronrecord.com/subdomains/blog/httpdocs/wp-content/plugins"'
+alias blog='cd "/Volumes/Seagate_8TB/Documents/My Documents/ronrecord.com/subdomains/blog/httpdocs"'
+# Easily switch between JDK versions
+alias setjdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
+alias setjdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+
+# Filecoin lotus apps wrappers to pull in environment variable settings
+alias lotus='lotus-wrapper'
+alias lotus-miner='lotus-miner-wrapper'
+alias lotus-worker='lotus-worker-wrapper'
+
+# convenience alias to get to my mail folders
+case "`uname -s`" in
+    CYGWIN*) alias gotomail=`cd "/home/Doctorfree/Users/Doctorfree/Application Data/Thunderbird/Profiles/xfvrpxha.default/ImapMail/imap.googlemail.com"`
+    ;;
+esac
+
+# Convenience aliases to rsync my Obsidian vaults to iCloud
+alias sync-cheat-sheets='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/cheat-sheets-plus/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Cheat Sheets Plus"'
+
+alias sync-media-vault='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/Obsidian/Obsidian-Media-Vault/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Media Vault"'
+
+alias sync-pokedex-markdown='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/Obsidian/Pokedex-Markdown/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pokedex Markdown"'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
