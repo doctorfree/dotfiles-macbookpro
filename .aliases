@@ -17,6 +17,7 @@ alias df='df -h'
 alias du='du -h'
 alias dutop='du -h -d 0'
 alias kc='kitty-control'
+alias ff='ffetch'
 alias neo='nfetch | lolcat'
 alias nf='nfetch'
 alias whence='type -a'
@@ -24,7 +25,7 @@ alias ips='cat /Volumes/Seagate_8TB/Documents/VMware_Doc/Static_IPs'
 # Convenience alias to log an entry to my Day One journal
 alias log="~/Scripts/logtodayone.rb"
 # EthOS working directories
-alias cdeth='cd "/Users/doctorwhen/Mining/ethos/home_ethos"'
+alias cdeth='cd "/Users/ronald.record/Mining/ethos/home_ethos"'
 # Project/Vendor working directories
 alias cdaud='cd "/Volumes/Seagate_8TB/Documents/My Documents/Audio"'
 alias powercli='cd /Volumes/Seagate_8TB/Documents/VMware_Doc/PowerCLI'
@@ -42,7 +43,7 @@ alias xart='cd "/Volumes/Seagate_8TB/Pictures/Work/X-Art"'
 alias fractals='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net/fractals"'
 alias skunkware='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net/skunkware"'
 alias ddns='cd "/Volumes/Seagate_8TB/Documents/ronrecord.ddns.net"'
-alias itunes='cd /Users/doctorwhen/Music/iTunes'
+alias itunes='cd /Users/ronald.record/Music/iTunes'
 alias rpi='cd /Volumes/Seagate_8TB/Raspberry_Pi'
 alias transcend='cd /Volumes/Transcend'
 alias viloan='vi "/Volumes/Seagate_8TB/Documents/My Documents/Finance/Marlene-Juice-Loan.txt"'
@@ -72,11 +73,11 @@ case "`uname -s`" in
 esac
 
 # Convenience aliases to rsync my Obsidian vaults to iCloud
-alias sync-cheat-sheets='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/cheat-sheets-plus/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Cheat Sheets Plus"'
+alias sync-cheat-sheets='/Users/ronald.record/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/ronald.record/src/cheat-sheets-plus/" "/Users/ronald.record/Library/Mobile Documents/iCloud~md~obsidian/Documents/Cheat Sheets Plus"'
 
-alias sync-media-vault='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/Obsidian/Obsidian-Media-Vault/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Media Vault"'
+alias sync-media-vault='/Users/ronald.record/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/ronald.record/src/Obsidian/Obsidian-Media-Vault/" "/Users/ronald.record/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Media Vault"'
 
-alias sync-pokedex-markdown='/Users/doctorwhen/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/doctorwhen/src/Obsidian/Pokedex-Markdown/" "/Users/doctorwhen/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pokedex Markdown"'
+alias sync-pokedex-markdown='/Users/ronald.record/src/Obsidian/rsync-obsidian-to-icloud/rsync-obsidian-to-icloud.sh "/Users/ronald.record/src/Obsidian/Pokedex-Markdown/" "/Users/ronald.record/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pokedex Markdown"'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
