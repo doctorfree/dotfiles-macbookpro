@@ -74,6 +74,7 @@
         "key": "╰─",
         "keyColor": "green"
     },
+    "break",
     {
         "type": "shell",
         "key": "╭─",
@@ -119,6 +120,7 @@
         "key": "╰─",
         "keyColor": "yellow"
     },
+    "break",
     {
         "type": "title",
         "key": "╭─",
@@ -168,10 +170,5 @@
         "format": "{4}", // ssid
         "keyColor": "blue"
     }
-//  {
-//      "type": "locale",
-//      "key": "╰─",
-//      "keyColor": "blue"
-//  }
   ]
 }
