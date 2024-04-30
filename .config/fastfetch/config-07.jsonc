@@ -5,6 +5,7 @@
       "top": 2
     },
     "type": "kitty",
+    "width": 40,
     "source": "~/.local/share/icons/hicolor/512x512/apps/apple-logo.png"
   },
   "display": {
