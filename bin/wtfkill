@@ -1,0 +1,21 @@
+#!/bin/bash
+
+num=`ps -ef | grep wtf | grep -v wtfkill | grep -v grep | wc -l`
+
+[ ${num} -gt 1 ] && {
+    echo "Multiple processes match 'wtf'"
+    echo "Kill manually"
+    echo "Exiting"
+    exit 1
+}
+[ ${num} -lt 1 ] && {
+    echo "No process match for 'wtf'"
+    echo "Kill manually"
+    echo "Exiting"
+    exit 1
+}
+
+wtf_pid=`ps -ef | grep wtf | grep -v wtfkill | grep -v grep | awk ' { print $2 } '`
+echo "Killing process id ${wtf_pid}"
+# ps -ef | grep ${wtf_pid}
+kill ${wtf_pid}

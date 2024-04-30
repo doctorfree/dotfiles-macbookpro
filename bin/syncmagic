@@ -1,0 +1,16 @@
+#!/bin/bash
+
+WORK="/Users/ronald.record/Pictures/Work"
+SRCE="${WORK}/MagicMirror"
+DEST="/Volumes/Transcend/Pictures"
+
+[ -d "${SRCE}" ] || {
+    echo "$SRCE does not exist or is not a directory. Exiting."
+    exit 1
+}
+[ -d "${DEST}" ] || {
+    echo "$DEST does not exist or is not a directory. Exiting."
+    exit 1
+}
+ 
+rsync -a -H -L --exclude 'Unused' --delete "${SRCE}" "${DEST}"

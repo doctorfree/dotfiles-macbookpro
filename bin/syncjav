@@ -1,0 +1,17 @@
+#!/bin/bash
+
+WORK="/Volumes/Seagate_8TB/Pictures/Work"
+SRCE="${WORK}/JP_Erotica"
+DEST="/Volumes/Transcend/Pictures"
+
+[ -d "${SRCE}" ] || {
+    echo "$SRCE does not exist or is not a directory. Exiting."
+    exit 1
+}
+[ -d "${DEST}" ] || {
+    echo "$DEST does not exist or is not a directory. Exiting."
+    exit 1
+}
+ 
+rsync -a -H --delete "${SRCE}" "${DEST}"
+

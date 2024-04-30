@@ -1,0 +1,19 @@
+#!/bin/bash
+
+GITLAB=https://gitlab.com
+USER=doctorfree
+PROJ="MMM-YouTubeWebView"
+#PROJ="doctorfree%2FMMM-YouTubeWebView.wiki.git"
+#doctorfree/MMM-YouTubeWebView/-/wikis/home
+#doctorfree/MMM-YouTubeWebView/-/wikis/git_access
+
+#curl --request GET "${GITLAB}/api/v4/projects"
+#curl --request GET "${GITLAB}/api/v4/projects/${PROJ}/repository/branches" | jq .
+
+# Works
+# Get list of projects for user
+#curl --request GET "${GITLAB}/api/v4/users/${USER}/projects"
+#
+# Get list of project wiki pages for user
+# See https://docs.gitlab.com/ee/api/wikis.html for wiki api docs
+curl --request GET "${GITLAB}/api/v4/projects/${USER}%2F${PROJ}/wikis" | jq .

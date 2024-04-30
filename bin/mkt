@@ -1,0 +1,10 @@
+#!/bin/bash
+
+img="$1"
+[ -f "${img}.png" ] || {
+  echo "$1.png does not exist. Exiting."
+  exit 1
+}
+mktrans ${img}.png
+cp ${img}-transparent.png ${img}.png
+rm ${img}-transparent.png

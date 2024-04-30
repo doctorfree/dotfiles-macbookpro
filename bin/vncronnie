@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xtigervncviewer -SecurityTypes VncAuth,TLSVnc -passwd /home/ronnie/.vnc/passwd ronnie:1

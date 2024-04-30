@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Adjust these to suit your purpose
+#
+# String to grep for to determine if this file should be changed
+# ENABLE="MMM-TelegramBot"
+# ENABLE="module: \"MMM-GoogleAssistant\""
+ENABLE="\"myReboot-Restart-Shutdown.js\"\,"
+# String to replace
+# STR="apiKey: '${ENABLE}'"
+# STR="${ENABLE}: \[\]\,"
+# STR="module: \'MMM-TelegramBot\'\,"
+# STR="module: \"MMM-GoogleAssistant\"\,"
+STR="\"myReboot-Restart-Shutdown.js\"\,"
+# String to grep for to determine if this file should be skipped
+# SKIP="rotateScreenInverted"
+# SKIP="MMM-TelegramCommands"
+# SKIP="//     module: \"MMM-GoogleAssistant\""
+SKIP="RoonCommand.js"
+# SKIP2="module: \"EXT-Detector\""
+SKIP2=
+# Text file containing replacement text
+INPUT="/tmp/rep"
+
+[ -f "${INPUT}" ] || {
+    echo "Missing input file ${INPUT}. Exiting."
+    exit 1
+}
+
+find . -type f | while read i
+do
+    grep "${ENABLE}" $i > /dev/null && {
+        [ "${SKIP}" ] && {
+            grep "${SKIP}" $i > /dev/null && continue
+        }
+        [ "${SKIP2}" ] && {
+            grep "${SKIP2}" $i > /dev/null && continue
+        }
+        b=`basename $i`
+        [ "$b" == "${INPUT}" ] && continue
+        echo "Processing $i"
+        cat $i | sed -e "/${STR}/r ${INPUT}" -e "/${STR}/d" > /tmp/$b
+        cp /tmp/$b $i
+        rm -f /tmp/$b
+    }
+done

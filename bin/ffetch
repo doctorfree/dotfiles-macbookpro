@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+tput clear
+export TERM=xterm-kitty
+
+/opt/homebrew/bin/fastfetch $*

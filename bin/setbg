@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DB="$HOME/Library/Application\ Support/Dock/desktoppicture.db"
+PICS="$HOME/Pictures/Backgrounds"
+BACK="${PICS}/wallhaven-1jzog3.jpg"
+
+# Doesn't work anymore
+#osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/ronald.record/Pictures/Backgrounds/wallhaven-1jzog3.jpg"'
+
+# Should work. Why not?
+#if [ -f ${BACK} ]
+#then
+#    sqlite3 $HOME/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/Users/ronald.record/Pictures/Backgrounds/wallhaven-1jzog3.jpg'"
+##   killall Dock
+#else
+#    echo "${BACK} does not exist or is not a plain file"
+#fi
+
+# From https://github.com/scriptingosx/desktoppr
+# Installed with Homebrew: brew install desktoppr
+desktoppr "${BACK}"

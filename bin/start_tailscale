@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tailscale up \
+	--accept-dns\
+	--accept-routes\
+	--exit-node-allow-lan-access \
+	--login-server=https://hsc01.hornblower.com

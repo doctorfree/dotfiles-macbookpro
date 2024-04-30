@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# This is to encrypt traffic in VNC sessions to my Ubuntu miner/mirror
+# Once the tunnel is created, connect a VNC client to localhost:5901
+
+ssh -L 5901:127.0.0.1:5901 -N -f -l ronnie 10.0.1.55

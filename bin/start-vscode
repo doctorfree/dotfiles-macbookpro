@@ -1,0 +1,18 @@
+#!/bin/bash
+
+have_code=$(type -p code)
+[ "${have_code}" ] && {
+  [ -d $HOME/.nvm ] && {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s $NVM_DIR/nvm.sh ] && . ${NVM_DIR}/nvm.sh
+  }
+
+  if [ "$1" ]; then
+    code --no-sandbox --password-store="gnome" $* > /dev/null 2>&1
+  else
+    code --no-sandbox --new-window --password-store="gnome" > /dev/null 2>&1
+  fi
+
+  sleep 4
+  center-active-window
+}

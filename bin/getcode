@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ "$1" ] || {
+    echo "usage: getcode secret-key"
+    exit 1
+}
+
+CODE=$1
+mintotp <<<${CODE}

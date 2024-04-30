@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# If you or your server admin become frustrated by the seemingly
+# endless creation of these files, there is a quick and easy way
+# to turn off the creation of .DS_Store files--execute
+# the following command in Terminal:
+
+[ "$1" == "disable" ] && {
+    echo "Disabling creation of .DS_Store folder metadata"
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+    echo "To disable MDS on a specific volume, execute the following:"
+    echo "sudo touch /Volumes/{drive name}/.metadata_never_index"
+    echo "Reboot system to take effect"
+    exit 0
+}
+
+# After the command is executed, reboot your Mac, and you'll be
+# good to go--no more .DS_Store files gunking up your system's folders.
+# If you need to set certain folders a particular way and want to reenable
+# the creation of these files, the fix is just as simple--enter the command
+# below and reboot your system once it's executed:
+
+[ "$1" == "enable" ] && {
+    echo "Enabling creation of .DS_Store folder metadata"
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores false
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool false
+    echo "To enable MDS on a specific volume, execute the following:"
+    echo "sudo rm -f /Volumes/{drive name}/.metadata_never_index"
+    echo "Reboot system to take effect"
+    exit 0
+}
+
+echo "Unrecognized argument(s): ds_store $*"
+echo "Usage: ds_store [enable|disable]"
+exit 1

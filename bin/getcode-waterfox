@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Your code for registered device 'charming_mandela' is: "
+
+mintotp <<<your-code
+

@@ -1,0 +1,103 @@
+#!/bin/bash
+#
+# showfiles - use bat to display the contents of files in the current directory
+#
+# showfiles [-d directory] [-l] [-m maxdepth] [-r] [-u] [directory]
+usage() {
+  printf "\nUsage: showfiles [-d directory] [-m maxdepth] [-r] [-u]"
+  printf "\nWhere:"
+  printf "\n\t-d <directory> indicates show files in <directory> (default: current)"
+  printf "\n\t-l indicates list files in directory and use fzf to select"
+  printf "\n\t-m <maxdepth> indicates only recurse <maxdepth> levels deep (default: 1)"
+  printf "\n\t-r indicates recursively show files (default: no)"
+  printf "\n\t-u displays this usage message and exits\n"
+  printf "\n\tIf a non-option argument is a directory, then use that as the directory\n"
+  exit 1
+}
+
+BAT_CMD="bat"
+have_bat=$(type -p bat)
+have_fzf=$(type -p fzf)
+have_lsd=$(type -p lsd)
+[ "${have_bat}" ] || {
+  have_bat=$(type -p batcat)
+  [ "${have_bat}" ] || {
+    printf "\nCannot locate bat command\n"
+    usage
+  }
+  BAT_CMD="batcat"
+}
+
+depth=1
+folder="."
+list=
+recurse=
+while getopts ":d:lm:ru" flag; do
+  case $flag in
+    d)
+      if [ -d "${OPTARG}" ]; then
+        folder="$OPTARG"
+      else
+        printf "\nDirectory ${OPTARG} does not exist or is not a directory\n"
+        usage
+      fi
+      ;;
+    l)
+      list=1
+      ;;
+    m)
+      depth="$OPTARG"
+      ;;
+    r)
+      recurse=1
+      ;;
+    u)
+      usage
+      ;;
+    \?)
+      echo "Invalid option: $flag"
+      usage
+      ;;
+  esac
+done
+shift $(( OPTIND - 1 ))
+
+[ "$1" ] && [ -d "$1" ] && folder="$1"
+
+if [ "${recurse}" ]; then
+  if [ ${depth} -gt 1 ]; then
+    deptharg=
+  else
+    deptharg="-maxdepth ${depth}"
+  fi
+else
+  deptharg="-maxdepth ${depth}"
+fi
+
+if [ "${list}" ]; then
+  if [ "${have_fzf}" ]; then
+    lsd=$(printf "${folder}\n${folder}/..\n" && ls -p | grep '/$' | sed 's;/$;;')
+    dir="$(printf '%s\n' "${lsd[@]}" |
+        fzf --reverse --preview '
+            __cd_nxt="$(echo {})";
+            __cd_path="$(echo ${folder}/${__cd_nxt} | sed "s;//;/;")";
+            echo $__cd_path;
+            echo;
+            ls -p --color=always "${__cd_path}";
+            ')"
+    [ ${#dir} != 0 ] && folder="${dir[0]}"
+    if [ "${have_lsd}" ]; then
+      lsd --tree --depth ${depth} ${folder}
+    else
+      ls ${folder}
+    fi
+  else
+    if [ "${have_lsd}" ]; then
+      lsd --tree --depth ${depth} ${folder}
+    else
+      ls ${folder}
+    fi
+  fi
+else
+  find ${folder} ${deptharg} -type f -exec ${BAT_CMD} {} +
+fi

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ "${IMMICH_API_KEY}" ] || source ~/.private
+
+immich login-key http://10.0.1.244:2283/api ${IMMICH_API_KEY}

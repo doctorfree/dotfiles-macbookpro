@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -f "$1" ] || {
+    echo "Usage: cleangl filename"
+    exit 1
+}
+
+GL="$1"
+
+cat ${GL} | sed -e "s/Ronald Record, //" -e "s/Ron Record, //" > /tmp/gl$$
+cp /tmp/gl$$ ${GL}
+rm -f /tmp/gl$$

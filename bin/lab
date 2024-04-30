@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TXT=/Users/ronald.record/Documents/Vodafone/Doc/Lab-Dirk-Setup.txt
+
+vi $TXT

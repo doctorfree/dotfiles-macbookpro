@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tailscale down
+tailscale up --accept-routes --login-server=https://hsc01.hornblower.com --reset

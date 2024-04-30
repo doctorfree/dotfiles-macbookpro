@@ -1,0 +1,6 @@
+#!/bin/bash
+
+brew tap wtfutil/wtfutil
+brew install wtfutil
+
+# wtfutil

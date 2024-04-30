@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ -f "$1" ] || {
+    echo "$1 does not exist or is not set. Exiting."
+    exit 1
+}
+
+sudo security add-trusted-cert -d -r trustRoot \
+     -k /Library/Keychains/System.keychain $1
