@@ -26,7 +26,7 @@ have_fetch=$(type -p fastfetch)
   fi
 }
 
-CONFDIR="${HOME}/.config/${FETCH}"
+CONFDIR="${XDG_CONFIG_HOME:-${HOME}/.config}/${FETCH}"
 
 usage() {
   printf "\nUsage: ffetch [-c config] [-r] [-u]"
