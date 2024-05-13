@@ -15,7 +15,7 @@
 # 	-r indicates select configuration file randomly
 # 	-u displays this usage messge and exits
 
-IMG="${HOME}/.local/share/icons/hicolor/512x512/apps/apple-logo.png"
+IMG="${HOME}/.local/share/icons/hicolor/384x384/apps/apple-logo.png"
 FETCHARGS=
 
 prog_name=$(basename "$0")

@@ -2,12 +2,10 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "padding": {
-      "left": 2,
       "top": 2
     },
     "type": "kitty",
-    "width": 40,
-    "source": "~/.local/share/icons/hicolor/512x512/apps/apple-logo.png"
+    "source": "~/.local/share/icons/hicolor/384x384/apps/apple-logo.png"
   },
   "display": {
     "separator": " -> "
@@ -15,11 +13,11 @@
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+      "format": " \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m       \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
     },
     {
       "type": "host",
-      "key": "├󰌢",
+      "key": "󰌢 PC",
       "keyColor": "green"
     },
     {
@@ -43,19 +41,25 @@
       "keyColor": "green"
     },
     {
-      "type": "display",
-      "key": "├󰍹",
+      "type": "uptime",
+      "key": "├󰅐",
       "keyColor": "green"
     },
     {
-      "type": "uptime",
-      "key": "└󰅐",
+      "type": "display",
+      "key": "└󰍹",
       "keyColor": "green"
+    },
+    {
+      "type": "title",
+      "key": "├",
+      "format": "{1}@{2}",
+      "keyColor": "yellow"
     },
     {
       "type": "os",
-      "key": " OS",
-      "keyColor": "yellow",
+      "key": "├",
+      "keyColor": "yellow"
     },
     {
       "type": "packages",
@@ -64,22 +68,14 @@
     },
     {
       "type": "shell",
-      "key": "├",
+      "key": "└",
       "keyColor": "yellow"
     },
-    {
-      "type": "title",
-      "key": "└",
-      "keyColor": "yellow"
-    },
+    "break",
+
     {
       "type": "wm",
       "key": " DE/WM",
-      "keyColor": "blue"
-    },
-    {
-      "type": "lm",
-      "key": "├󰧨",
       "keyColor": "blue"
     },
     {
@@ -98,10 +94,12 @@
       "keyColor": "blue"
     },
     {
-      "type": "terminalfont",
-      "key": "└",
+      "type": "wallpaper",
+      "key": "└󰸉",
       "keyColor": "blue"
     },
+
+    "break",
     {
       "type": "sound",
       "key": " SOUND",
@@ -109,22 +107,13 @@
     },
     {
       "type": "player",
-      "key": "│ ├󰥠",
+      "key": "├󰥠",
       "keyColor": "cyan"
     },
     {
       "type": "media",
-      "key": "│ └󰝚",
+      "key": "└󰝚",
       "keyColor": "cyan"
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
-    },
-    {
-      "type": "custom",
-      "format": " \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m       \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
     }
-
   ]
 }
