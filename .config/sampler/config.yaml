@@ -1,0 +1,39 @@
+barcharts:
+  - title: Local network activity
+    rate-ms: 500        # sampling rate, default = 1000
+    scale: 0            # number of digits after sample decimal point, default = 1
+    items:
+      - label: UDP bytes in
+        sample: nettop -J bytes_in -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: UDP bytes out
+        sample: nettop -J bytes_out -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes in
+        sample: nettop -J bytes_in -l 1 -m tcp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes out
+        sample: nettop -J bytes_out -l 1 -m tcp | awk '{sum += $4} END {print sum}'
+
+sparklines:
+  - title: CPU usage
+    rate-ms: 200
+    scale: 0
+    sample: ps -A -o %cpu | awk '{s+=$1} END {print s}'
+  - title: Free memory pages
+    rate-ms: 200
+    scale: 0
+    sample: memory_pressure | grep 'Pages free' | awk '{print $3}'
+
+#variables:
+#  sshronnie: ssh -l ronnie 10.0.1.55
+#textboxes:
+#  - title: ronnie.neoman.dev
+#    pty: true
+#    init: $sshronnie
+#    sample: btop
+
+#asciiboxes:
+#  - title: Time
+#    rate-ms: 500        # sampling rate, default = 1000
+#    font: 3d            # font type, default = 2d
+#    border: false       # border around the item, default = true    
+#    color: 43           # 8-bit color number, default is white
+#    sample: date +%r

@@ -15,11 +15,6 @@
       "keyColor": "green"
     },
     {
-      "type": "display",
-      "key": "├─󰍹",
-      "keyColor": "green"
-    },
-    {
       "type": "cpu",
       "key": "├─󰻠",
       "keyColor": "green"
@@ -27,6 +22,11 @@
     {
       "type": "gpu",
       "key": "├─󰻠",
+      "keyColor": "green"
+    },
+    {
+      "type": "physicaldisk",
+      "key": "├─",
       "keyColor": "green"
     },
     {
@@ -45,8 +45,40 @@
       "keyColor": "green"
     },
     {
+      "type": "chassis",
+      "key": "├─󰌢",
+      "keyColor": "green"
+    },
+    {
+      "type": "board",
+      "key": "├─󰌢",
+      "keyColor": "green",
+      "format": "{?1}{1}{?}{?2} ({2}){?}"
+    },
+    {
+      "type": "wifi",
+      "key": "├─",
+      "keyColor": "green",
+      "format": "{?1}{1}{?}{?6} - {6}{?}"
+    },
+    {
+      "type": "camera",
+      "key": "├─󰍹",
+      "keyColor": "green"
+    },
+    {
+      "type": "poweradapter",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
       "type": "battery",
-      "key": "╰─",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "display",
+      "key": "╰─󰍹",
       "keyColor": "green"
     }
   ]

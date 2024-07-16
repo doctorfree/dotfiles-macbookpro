@@ -2,7 +2,7 @@
 #
 # Kitty tab with FastFetch
 new_tab
-launch --hold zsh -c /Users/ronald.record/bin/ffetch
+launch --hold zsh -c /Users/ronald.record/.local/bin/ffetch
 enabled_layouts tall:bias=50;full_size=1
 layout tall
 

@@ -29,6 +29,7 @@ alias cdeth='cd "/Users/ronald.record/Mining/ethos/home_ethos"'
 # Project/Vendor working directories
 alias cdaud='cd "/Volumes/Seagate_8TB/Documents/My Documents/Audio"'
 alias powercli='cd /Volumes/Seagate_8TB/Documents/VMware_Doc/PowerCLI'
+alias sampler='sampler --config ~/.config/sampler/config.yaml'
 
 alias cdfinance='cd "/Volumes/Seagate_8TB/Documents/My Documents/Finance"'
 alias mbsa='cd "/u/audio"'
